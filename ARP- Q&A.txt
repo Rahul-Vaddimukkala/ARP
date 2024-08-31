@@ -1,0 +1,184 @@
+Question 1. What Is Arp?
+
+Answer :
+
+Address Resolution Protocol (ARP) is a community protocol, which maps a network layer protocol address to a records link layer hardware cope with. For instance, ARP is used to remedy IP deal with to the corresponding Ethernet address.
+
+Question 2. To Which Osi Layer Does Arp Belong?
+
+Answer :
+
+ARP belongs to the OSI information hyperlink layer (Layer 2). ARP protocol is applied by the network protocol driver. ARP packets are encapsulated with the aid of Ethernet headers and transmitted. 
+
+Udp Interview Questions
+Question 3. Which Rfc Specify The Requirements For Arp?
+
+Answer :
+
+RFC 826 specifies the ARP packet layout and other details. 
+
+Question four. What Is The Use Of Arp?
+
+Answer :
+
+A host in an Ethernet community can talk with every other host, best if it knows the Ethernet deal with (MAC deal with) of that host. The better degree protocols like IP use a special type of addressing scheme (like IP cope with) from the decrease level hardware addressing scheme like MAC cope with. ARP is used to get the Ethernet address of a number from its IP cope with. ARP is significantly utilized by all of the hosts in an Ethernet community.
+
+Question five. Why A Ip Address Needs To Be Mapped To A Mac Address, Why Can't The Mac Address Itself Is Represented Using The Ip Address?
+
+Answer :
+
+The length of a MAC cope with is 6 bytes and the length of an IP address is four bytes. Obviously, the MAC address cannot be represented using the IP address. So an IP cope with have to be mapped to the corresponding MAC address. 
+
+Question 6. Can Arp Be Used In A Network Other Than Ethernet?
+
+Answer :
+
+ARP is a widespread protocol, which can be utilized in any form of broadcast network. The fields in the ARP packet specifies the form of the MAC deal with and the kind of the protocol address. ARP is used with most IEEE 802.X LAN media. In particular, it is also used with FDDI, Token Ring, and Fast Ethernet, in precisely the identical way as it's miles with Ethernet.
+
+Question 7. How Does Arp Resolve An Ip Address To An Ethernet Mac Address?
+
+Answer :
+
+When ARP wishes to solve a given IP cope with to Ethernet cope with, it proclaims an ARP request packet. The ARP request packet includes the supply MAC deal with and the supply IP cope with and the destination IP cope with. Each host in the nearby community gets this packet. The host with the specified vacation spot IP address, sends an ARP reply packet to the originating host with its IP address.
+
+Question 8. What Is An Arp Cache?
+
+Answer :
+
+ARP maintains the mapping among IP address and MAC deal with in a desk in memory known as ARP cache. The entries in this table are dynamically introduced and eliminated.
+
+Question nine. When Is An Arp Request Packet Generated?
+
+Answer :
+
+The following steps outcomes inside the era of an ARP request packet:
+
+The IP module sends a packet, destined for another host in the community, to the ARP module.
+The ARP module seems up the ARP table (cache) to resolve the IP deal with.
+If the provided IP cope with is present in the ARP cache, it's far resolved into its Ethernet cope with.
+If the ARP module isn't capable of discover an entry for this IP deal with inside the ARP cache, then it sends an ARP request packet to the Ethernet driving force, to clear up the IP deal with to the Ethernet deal with.
+After the IP cope with is resolved by the ARP module, the packet is sent to the Ethernet motive force for transmission. 
+Question 10. What Happens When A Host Receives An Arp Request Packet?
+
+Answer :
+
+The ARP request is received and processed with the aid of all of the hosts inside the community, because it's miles a broadcast packet.
+
+The following steps are done when a ARP request packet is acquired with the aid of a number:
+
+
+If the IP address to be resolved is for this host, then the ARP module sends an ARP respond packet with its Ethernet MAC deal with.
+If the IP address to be resolved is for this host, then the ARP module updates its ARP cache with the supply Ethernet MAC address to supply IP address mapping present in the ARP request packet. If the access is already present inside the cache, it's far overwritten. If it isn't always present, it is added.
+If the IP address to be resolved isn't always for this host, then the ARP module discards the ARP request packet. 
+Question eleven. Will A Host Update Its Arp Cache Upon Receiving Any Arp Request?
+
+Answer :
+
+A host will replace its ARP cache, most effective if the ARP request is for its IP address. Otherwise, it'll discard the ARP request. 
+
+Question 12. What Is The Disadvantage If A Host Updates Its Arp Cache Upon Receiving Any Arp Request?
+
+Answer :
+
+The host will exhaust the ARP cache with a variety of unused ARP entries, if it updates the ARP cache for any ARP request.
+
+Udp Interview Questions
+Question 13. What Happens When A Host Receives An Arp Reply Packet?
+
+Answer :
+
+The ARP reply packet is received only with the aid of the host, which transmitted the ARP request packet. The ARP module provides the Ethernet hardware cope with to IP cope with mapping gift in the ARP reply packet to the ARP cache.
+
+Question 14. Is There A Separate Packet Format For Arp Request And Arp Reply?
+
+Answer :
+
+No. Both the ARP request and ARP respond packets use the identical format.
+
+Question 15. Which Mac Address Is An Arp Request Directed To?
+
+Answer :
+
+All ARP request packets are transmitted with the Ethernet broadcast cope with, so that all hosts in the community will acquire the request. 
+
+Question 16. To Which Mac Address Is An Arp Reply Packet Directed To?
+
+Answer :
+
+ARP reply packet is directed to the host, which transmitted the ARP request packet. 
+
+Question 17. If A Host Is Not Able To Get The Mac Address Of A Host, How It Knows About Its Ip Address?
+
+Answer :
+
+A host will either use a static document like /and so forth/hosts or DNS protocol to get the IP cope with of every other host.
+
+Question 18. What Will Happen If An Arp Reply Is Not Received For An Arp Request?
+
+Answer :
+
+If an ARP respond isn't obtained, then that IP address can't be resolved to an Ethernet deal with. Without a Ethernet address, the packets can't be transmitted.
+
+Question 19. When Is An Entry Added To The Arp Cache?
+
+Answer :
+
+A new access is brought to the ARP cache when an IP address is efficaciously mapped to a MAC deal with. Usually, entries are delivered dynamically to the ARP cache. Static entries also can be introduced. 
+
+Question 20. What Will Happen If A New Arp Request Packet Is Received, But The Mac Address To Ip Address Is Already Present In The Arp Cache?
+
+Answer :
+
+ARP request packet is received and the mapping already exists within the ARP cache, it will likely be overwritten with the values gift within the request.
+
+Question 21. When Is An Entry Removed From An Arp Cache?
+
+Answer :
+
+ An access in an ARP cache is eliminated after a pre-decided timeout duration (e.G. 20 mins).
+
+Question 22. What Is The Size Of An Arp Request And Reply Packet?
+
+Answer :
+
+The length of an ARP request or reply packet is 28 bytes. 
+
+Question 23. How To Differentiate Between A Arp Request Packet And A Arp Reply Packet, As The Ethernet Type Field Is Same On Both The Packets?
+
+Answer :
+
+An ARP request packet can be differentiated from an ARP reply packet using the 'operation' field inside the ARP packet. For a ARP request it's far 1 and for an ARP respond it's miles 2. 
+
+Question 24. Why Is The Hardware Mac Address Present In Both The Ethernet Header And The Arp Packet (request And Reply)?
+
+Answer :
+
+The Ethernet header is processed by way of the records hyperlink driver and eliminated from the packet. When the ARP layer gets the packet, it needs to realize the hardware and protocol addresses so that it will update the table. That is why the hardware MAC deal with is present in both the Ethernet header and the ARP packet. 
+
+Question 25. What Is Proxy Arp?
+
+Answer :
+
+Proxy ARP is the procedure wherein one device responds to the ARP request for some other system. For example, host A sends an ARP request to remedy the IP address of host B. Instead of Host B, Host C responds to this ARP request.
+
+Question 26. What Is The Use Of Proxy Arp?
+
+Answer :
+
+When routers receive ARP requests from one network for hosts on the network, they will reply with a ARP respond packet with their MAC cope with. For example, allow us to say host A is in a single community, host B is in another network and router C connects these  networks. When host A sends an ARP request to resolve the IP address of host B, the router C gets this packet. The router C sends an ARP reply with its MAC cope with. So host A will ship all the packets destined for host B to the router C. Router C will then forward the ones packets to host B. Proxy ARP is likewise used if a number in a community isn't able to understand subnet addressing. For example, if host A and host B are actually in  extraordinary subnets, but host A can't apprehend subnet addressing. So host A assumes that host B is gift inside the identical community. In this case a router, host C, can use proxy ARP to route packets between host A and host B.
+
+Question 27. What Is Gratuitous Arp?
+
+Answer :
+
+When a bunch sends an ARP request to remedy its very own IP cope with, it's miles referred to as gratuitous ARP. In the ARP request packet, the source IP address and vacation spot IP deal with are full of the identical source IP cope with itself. The destination MAC deal with is the Ethernet broadcast address (FF:FF:FF:FF:FF:FF).
+
+Question 28. What Is The Use Of Gratuitous Arp?
+
+Answer :
+
+Gratuitous ARP is used for the following:
+
+In a nicely configured network, there will now not be an ARP respond for a gratuitous ARP request. But if some other host in the community is also configured with the identical IP deal with as the source host, then the source host gets an ARP reply. In this way, a bunch can decide whether every other host is likewise configured with its IP cope with.
+When the network interface card in a machine is changed, the MAC cope with to its IP cope with mapping is modified. In this situation, while the host is rebooted, it's going to ship an ARP request packet for its very own IP cope with. As this is a published packet, all the hosts inside the community will obtain and procedure this packet. They will update their old mapping inside the ARP cache with this new mapping.
+
